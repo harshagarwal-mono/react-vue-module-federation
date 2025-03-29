@@ -1,16 +1,16 @@
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-const count = ref(0);
+const count = ref(0)
 
 const increment = () => {
-  count.value++;
-};
+  count.value++
+}
 </script>
 
 <template>
   <div class="counter">
-    <p>LocalCount is {{count}}</p>
+    <p>LocalCount is {{ count }}</p>
     <button @click="increment">Increment</button>
   </div>
 </template>
@@ -27,22 +27,22 @@ const increment = () => {
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+  box-shadow: 5px 5px 5px rgb(231, 131, 10, 0.6);
   gap: 10px;
   color: #242424;
 }
 
 .counter button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 10px 20px;
-  border: 1px solid #4CAF50;
+  border: 1px solid #4caf50;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .counter button:hover {
   background-color: white;
-  color: #4CAF50;
+  color: #4caf50;
 }
 </style>

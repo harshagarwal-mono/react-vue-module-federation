@@ -4,7 +4,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import vueDevTools from 'vite-plugin-vue-devtools'
-import federation from "@originjs/vite-plugin-federation";
+import federation from '@originjs/vite-plugin-federation'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -14,7 +14,7 @@ export default defineConfig({
   },
   plugins: [
     vue({
-      customElement: true,
+      // customElement: true, // Uncomment to use web components
     }),
     vueJsx(),
     vueDevTools(),
@@ -23,16 +23,16 @@ export default defineConfig({
       filename: 'remoteEntry.js',
       // Modules to expose
       exposes: {
-          './LocalCounter': './src/components/LocalCounter.vue',
-          './RemoteApp': './src/RemoteApp.js',
-          './WcLocalCounter': './src/web-components/WcLocalCounter.js',
+        './LocalCounter': './src/components/LocalCounter.vue',
+        './RemoteApp': './src/RemoteApp.js',
+        './WcLocalCounter': './src/web-components/WcLocalCounter.js',
       },
-      shared: ['vue']
-  }),
+      shared: ['vue'],
+    }),
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
 })
